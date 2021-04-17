@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Varela+Round"/>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+</head>
+
+
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>Chatbud - Create a new Group</title>
+</head>
+<body>
+
+<!-- <center><p style="font-family: 'Varela Round'; color: #FFFFFF">.</p></center>
+<center><p style="font-family: 'Varela Round'; color: #FFFFFF">.</p></center>
+<center><p style="font-family: 'Varela Round'; color: #FFFFFF">.</p></center>
+<center><p style="font-family: 'Varela Round'; color: #FFFFFF">.</p></center> -->
+
+
+<label><h1 style="font-family: 'Varela Round';color:#e8f380">Hello {{ current_user.username }} :)</h1></label>
+
+
+<label><h1 style="color: #e8f380; font-family: 'Varela Round'">Create you own group</h1></label>
+
+
+<form action="{% url 'create_group' %}" method="post">
+
+    {% csrf_token %}
+
+    <main>
+        <input type="text" name="group_name" placeholder="Name"/>
+        <input type="text" name="group_description" placeholder="Description"/>
+        <select name="users" id="user_ids" multiple>
+            {% for participants in all_users %}
+                <option value="{{participants.id}}">{{participants.username}}</option>
+            {% endfor%}
+        </select>
+        
+        <button>submit</button>
+    </main>
+
+
+</form>
+
+<label><h1 style="color: #e8f380; font-family: 'Varela Round'">Check the <a href="{% url 'home' %}">home</a> page once
+    you create the group.</h1></label>
+
+
+</body>
+
+
+</html>
