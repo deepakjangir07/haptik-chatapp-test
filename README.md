@@ -1,8 +1,6 @@
 # ChatApp  #
 
-![](http://g.recordit.co/JYruQDLd0h.gif)
-
-A small functional person-to-person message center application built using Django.
+A small functional person-to-person and group message center application built using Django.
 It has a REST API and uses WebSockets to notify clients of new messages and 
 avoid polling.
 
@@ -33,8 +31,6 @@ distributed environment.
 Please take a look at the link below for more information:
 https://channels.readthedocs.io/en/latest/introduction.html
 
-
-**update 04/06/19**
 
 - using pipenv for package management
 - move to Channels 2
