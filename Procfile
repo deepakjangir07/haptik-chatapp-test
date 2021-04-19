@@ -1,1 +1,1 @@
-web: gunicorn ChatTestApp.wsgi --log-file -
+web: gunicorn chattestapp.wsgi --log-file -
