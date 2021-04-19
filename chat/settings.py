@@ -81,32 +81,32 @@ WSGI_APPLICATION = 'chat.wsgi.application'
 # https://docs.djangoproject.com/en/dev/ref/settings/#databases
 # ec2-35-174-35-242.compute-1.amazonaws.com
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'chat',
-#         'USER': 'deepak',
-#         'PASSWORD': 'Deepak@123',
-#         'HOST':'localhost',
-#         'PORT':'5432',
-#         'OPTIONS': {
-#         }
-#     }
-# }
-
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'd3ckio9qhsi558',
-        'USER': 'hovaebvofpalyx',
-        'PASSWORD': 'aedd18d328a6f02fa20276b55bd3c9f383de959bffeea78414e0df2268af0d87',
-        'HOST':'ec2-35-174-35-242.compute-1.amazonaws.com',
+        'NAME': 'chat',
+        'USER': 'deepak',
+        'PASSWORD': 'Deepak@123',
+        'HOST':'localhost',
         'PORT':'5432',
         'OPTIONS': {
         }
     }
 }
+
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'd3ckio9qhsi558',
+#         'USER': 'hovaebvofpalyx',
+#         'PASSWORD': 'aedd18d328a6f02fa20276b55bd3c9f383de959bffeea78414e0df2268af0d87',
+#         'HOST':'ec2-35-174-35-242.compute-1.amazonaws.com',
+#         'PORT':'5432',
+#         'OPTIONS': {
+#         }
+#     }
+# }
 # Password validation
 # https://docs.djangoproject.com/en/dev/ref/settings/#auth-password-validators
 
@@ -205,7 +205,7 @@ CHANNEL_LAYERS = {
     'default': {
         'BACKEND': 'channels_redis.core.RedisChannelLayer',
         'CONFIG': {
-            "hosts": [(CHAT_WS_SERVER_HOST, CHAT_WS_SERVER_PORT)],
+            "hosts": [('127.0.0.1', 6379)],
             "channel_capacity": {
                         "http.request": 100,
                         "websocket.send*": 200,
