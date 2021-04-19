@@ -82,10 +82,12 @@ WSGI_APPLICATION = 'chat.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'chat',
-        'USER': 'root',
-        'PASSWORD': '',
+        'USER': 'deepak',
+        'PASSWORD': 'Deepak@123',
+        'HOST':'localhost',
+        'PORT':'5432',
         'OPTIONS': {
         }
     }
@@ -200,7 +202,7 @@ STATICFILES_DIRS = (
 )
 
 #  Add configuration for static files storage using whitenoise
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+# STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 
 # import dj_database_url 
