@@ -25,7 +25,7 @@ from .models import *
 @login_required
 def create_group(request):
     current_user = request.user
-    all_users = User.objects.all().exclude(id=current_user.id)
+    all_users = User.objects.filter(is_active=False).exclude(id=current_user.id)
 
     if request.method == "POST":
         print(current_user)
