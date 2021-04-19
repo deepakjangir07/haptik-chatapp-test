@@ -96,7 +96,7 @@ $(document).ready(function () {
 
     var socket = new WebSocket(
         'wss://' + window.location.host +
-        '/wss?session_key=${sessionKey}')
+        '/ws?session_key=${sessionKey}')
 
     chatInput.keypress(function (e) {
         if (e.keyCode == 13)
