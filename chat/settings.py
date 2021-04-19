@@ -205,7 +205,7 @@ CHANNEL_LAYERS = {
     'default': {
         'BACKEND': 'channels_redis.core.RedisChannelLayer',
         'CONFIG': {
-            "hosts": ['http://f2720ea1c182df230bee:21990a865d0adb23ca0b@api-mt1.pusher.com/apps/1190698'],
+            "hosts": [('localhost', 6379)],
             "channel_capacity": {
                         "http.request": 100,
                         "websocket.send*": 200,

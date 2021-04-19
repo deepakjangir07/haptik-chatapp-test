@@ -37,8 +37,8 @@ https://channels.readthedocs.io/en/latest/introduction.html
 - use redis as the channel layer backing store. for more information, please check [channels_redis](https://github.com/django/channels_redis)
 
 ### Database ###
-For this demo, I'm using a simple MySQL setup. If more performance is required, 
-a MySQL cluster / shard could be deployed.
+For this demo, I'm using a simple Postgres PSQL setup. If more performance is required, 
+a PSQL cluster / shard could be deployed.
 
 PD: I'm using indexes to improve performance.
 
@@ -67,7 +67,7 @@ pipenv --python 3 shell
 ```bash
 pipenv install
 ```
-3. Create a MySQL database
+3. Create a PSQL database
 ```sql
 CREATE DATABASE chat CHARACTER SET utf8;
 ```
