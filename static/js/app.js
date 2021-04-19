@@ -95,8 +95,8 @@ $(document).ready(function () {
     var ws_scheme = window.location.protocol == "https:" ? "wss" : "ws";
 
     var socket = new WebSocket(
-        ws_scheme+'://' + window.location.host +
-        '/ws?session_key=${sessionKey}')
+        'wss://' + window.location.host +
+        '/wss?session_key=${sessionKey}')
 
     chatInput.keypress(function (e) {
         if (e.keyCode == 13)
