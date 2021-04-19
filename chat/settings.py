@@ -189,6 +189,11 @@ LOGIN_URL = '/login/'
 
 ALLOWED_HOSTS = ['*']
 
+
+CHAT_WS_SERVER_HOST =  '0.0.0.0'
+CHAT_WS_SERVER_PROTOCOL = 'wss'
+CHAT_WS_SERVER_PORT = int(os.environ.get('PORT', 5002))
+
 # Import local_settings.py
 try:
     from local_settings import *
@@ -200,7 +205,11 @@ CHANNEL_LAYERS = {
     'default': {
         'BACKEND': 'channels_redis.core.RedisChannelLayer',
         'CONFIG': {
-            "hosts": [('https://haptik-chatapp.herokuapp.com', 6379)],
+            "hosts": [(CHAT_WS_SERVER_HOST, CHAT_WS_SERVER_PORT)],
+            "channel_capacity": {
+                        "http.request": 100,
+                        "websocket.send*": 200,
+                    }
         },
     },
 }
@@ -222,5 +231,6 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # import dj_database_url 
 # prod_db  =  dj_database_url.config(conn_max_age=500)
 # DATABASES['default'].update(prod_db)
+
 
 DEBUG = True
